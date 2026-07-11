@@ -5,7 +5,7 @@ from opening import OpeningPage
 from folder_manager import FolderManager
 from downloader import Downloader
 
-TENDER_ID = "1296437"
+TENDER_ID = "1244124"
 
 
 def main():
@@ -97,36 +97,43 @@ def main():
 
         downloader = Downloader(page, folders)
 
-        INDIVIDUAL_FORMS = [
+        print("\nForm Summary")
+        print("=" * 80)
 
-            "e-Tender Submission Letter (Form e-PG3 1)",
+        for form in forms:
+            print(f"{form['name']} --> has_individual = {form['has_individual']}")
 
-            "Tenderer Information Form (e-PG3-2) - Part 1",
-
-            "Tenderer Information Form (e-PG3-2) - Part 2",
-
-            "Subcontractor Information Form (Form e-PG3-3)",
-
-            "Technical Specifications and Compliance of Goods and related services (Form e-PG3-5)"
-
-        ]
+        print("=" * 80)
 
         for form in forms:
 
-            if form["name"] not in INDIVIDUAL_FORMS:
+            if not form["has_individual"]:
+                print(f"Skipping: {form['name']}")
                 continue
 
             print("\n" + "=" * 80)
-            print(form["name"])
+            print(f"Processing: {form['name']}")
             print("=" * 80)
 
-            opening.open_individual_report(form)
+            try:
 
-            downloader.download_individual_report(
-                form["name"]
-            )
+                opening.open_individual_report(form)
 
-            opening.back_to_opening()
+                downloader.download_individual_report(
+                    form["name"]
+                )
+
+                opening.back_to_opening()
+
+            except Exception as e:
+
+                print(f"\nERROR while processing {form['name']}")
+                print(e)
+
+                try:
+                    opening.back_to_opening()
+                except:
+                    pass
 
         html = page.content()
 
