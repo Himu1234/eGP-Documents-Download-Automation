@@ -309,4 +309,4 @@ Check that the username and password in the `.env` file are correct.
 
 # Disclaimer
 
-This software is intended to automate repetitive document downloading from the Bangladesh e-GP portal. Users are responsible for ensuring that they use the software in accordance with the policies, regulations, and permissions of their organization and the e-GP system.
+This software is intended to automate repetitive document downloading from the BPPA's e-GP portal. Users are responsible for ensuring that they use the software in accordance with the policies, regulations, and permissions of their organization and the e-GP system.
