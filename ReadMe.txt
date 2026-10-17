@@ -219,6 +219,8 @@ Install the browser used by Playwright
 
 ```bash
 playwright install
+If this command does not work, try the following one:
+python -m playwright install
 ```
 
 Wait until all installations finish.
