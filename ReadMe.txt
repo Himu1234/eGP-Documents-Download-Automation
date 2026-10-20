@@ -252,7 +252,7 @@ Open `main.py`.
 Find the following line:
 
 ```python
-TENDER_ID = "1296437"
+TENDER_ID = "your_eGP_tender_ID"
 ```
 
 Replace the value with your required Tender ID.
@@ -297,6 +297,8 @@ Run
 
 ```bash
 playwright install
+or
+python -m playwright install
 ```
 
 again.
