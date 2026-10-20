@@ -24,8 +24,8 @@ def main():
         # Timeout
         # -------------------------------------------------
 
-        page.set_default_timeout(180000)
-        page.set_default_navigation_timeout(180000)
+        page.set_default_timeout(15000)
+        page.set_default_navigation_timeout(15000)
 
         # -------------------------------------------------
         # Navigate
