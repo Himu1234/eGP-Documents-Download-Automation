@@ -5,7 +5,7 @@ from opening import OpeningPage
 from folder_manager import FolderManager
 from downloader import Downloader
 
-TENDER_ID = "1244124"
+TENDER_ID = "your_eGP_tender_ID"
 
 
 def main():
